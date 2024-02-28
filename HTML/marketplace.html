@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title >Marketplace</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.1.1/crypto-js.min.js" integrity="sha512-E8QSvWZ0eCLGk4km3hxSsNmGWbLtSCSUcewDQPQWZF6pEU8GlT8a5fF32wOl1i8ftdMhssTrF/OhyGWwonTcXA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<link rel="stylesheet" href="../CSS/style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <!-- <link rel="stylesheet" href="../CSS/style.css"> -->
+
+  
+  <script src="../JS/marketplace.js"></script>
+  <script src="../JS/nav.js"></script>
+
+
+
+  <style>
+    html, body {
+      height: 100%;
+    }
+    
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      width: 100%;
+
+      
+    }
+    .spacer {
+      margin: 0 20px; /* Aggiungi uno spazio di 20px tra i div */
+    }
+    </style>
+</head>
+<!-- NAV -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+       
+        <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+            <div>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="#">AFSE</a>
+                    </li>
+                    <li class="nav-item ms-auto">
+                        <a class="nav-link" href="../HTML/crediti.html">Compra</a>
+                    </li>
+                 
+                    <li class="nav-item">
+                        <a class="nav-link " href="../HTML/scambia.html" tabindex="-1" aria-disabled="false">Scambia</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../HTML/sbusta.html"  tabindex="-1" aria-disabled="true">Sbusta</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../HTML/album.html"  tabindex="-1" aria-disabled="true">Album</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../HTML/cerca.html"  aria-disabled="true">Cerca</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../HTML/collezione.html"  tabindex="-1" aria-disabled="true">Collezione</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link " href="../HTML/marketplace.html"  tabindex="-1" aria-disabled="true">Marketplace</a>
+                    </li>
+                </ul>
+            </div>
+            <div>
+
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <div class="bg-light border"></div>
+
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="../HTML/profilo.html" id="profilonav">Profilo</a>
+                    </li>
+                        <div class="bg-light border"></div>
+                            <li class="nav-item ms-auto">
+                                <a class="nav-link active" aria-current="page" href="../HTML/crediti.html" id="crediti">Crediti</a>
+                                
+                            </li>
+                    </li>
+                    <div class="bg-light border"></div>
+
+                    <li class="nav-item">
+                        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" id="carte">Carte</a>
+                    </li>
+                    <div class="bg-light border"></div>
+                    <li class="nav-item">
+                        <button class="btn btn-primary mb-2" onclick="logout()">LOGOUT</button>
+                    </li>
+                    <div class="bg-light border"></div>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<body>
+    <div id="sfondo"></div>
+    <div style="display: flex;flex-direction: row;">
+
+        <div class="container" >
+            <div id="schedaScambiaMarketplace">
+                <h1>Scambi disponibili</h1>
+                <hr class="hr" />
+                <div style="overflow-y: scroll; max-height: 800px;">
+                    <div id="schedaTransazioni" class="d-none"> 
+                        <!-- USER -->
+                        <!-- CARTA CHE VUOLE SCAMBIARE -->
+                        <div style="flex-direction: column; display: flex;">
+
+                                <div id="card1" class="card-body" style=" max-width: 500px; max-height: 500px; background-color: blue;">
+
+                                    <h5 class="card-title">Card title</h5>
+                                <img class="card-img-top" style="max-width: 300px; max-height: 300px" src="..." >
+
+                                    <hr class="hr" />
+                                    
+                                    
+                                    <a href="..." class="btn btn-primary">Scheda personaggio</a>
+                                </div>
+                                <h1 class="user1">ivan</h1>
+
+                        </div>
+                       
+                        <!-- CARTA CHE VUOLE AVERE -->
+                        <div style="flex-direction: column; display: flex;">
+                            
+                                <div id="card2" class="card-body" style="background-color: blue; margin-left: 30px; max-width: 500px; max-height: 500px;">
+
+                                    <h5 class="card-title">Card title</h5>
+                                    <img class="card-img-top"  style="max-width: 300px; max-height: 300px" src="..." >
+
+                                    <hr class="hr" />
+                                    
+                                    
+                                    <a href="..." class="btn btn-primary">Scheda personaggio</a>
+                                    
+                                </div>
+                                <h1>VUOLE</h1>
+                                
+                        </div>
+                        <div class="spacer">
+                            <!-- il valore di questo button viene preso da     clone.getElementsByClassName('btn btn-primary')[2].value = e.idscambio in viewPendingTrades() -->
+                            <button type="button" class="btn btn-primary "onclick="handleTrade(this.value)">scambia!</button>
+
+                        </div>
+
+                    </div>
+                    
+                    
+                </div>
+            </div>
+         </div>
+         <div class="container" >
+            <div id="schedaScambiaMarketplace">
+                <h1>Scambi terminati</h1>
+                <hr class="hr" />
+                <div style="overflow-y: scroll; max-height: 800px;">
+                    <div id="schedaTransazioniTerminate" class="d-none"> 
+                        <!-- USER -->
+                        <!-- CARTA CHE VUOLE SCAMBIARE -->
+                        <div style="flex-direction: column; display: flex;">
+
+                                <div id="card1" class="card-body" style=" max-width: 500px; max-height: 500px; background-color: blue;">
+
+                                    <h5 class="card-title">Card title</h5>
+                                <img class="card-img-top" style="max-width: 300px; max-height: 300px" src="..." >
+
+                                    <hr class="hr" />
+                                    
+                                    
+                                    <a href="..." class="btn btn-primary">Scheda personaggio</a>
+                                </div>
+                                <h1 class="user1">ivan</h1>
+                            </div>
+                        <!-- CARTA CHE VUOLE AVERE -->
+                        <div style="flex-direction: column; display: flex;">
+
+                                <div id="card2" class="card-body" style="background-color: blue; margin-left: 30px; max-width: 500px; max-height: 500px;">
+
+                                    <h5 class="card-title">Card title</h5>
+                                    <img class="card-img-top"  style="max-width: 300px; max-height: 300px" src="..." >
+
+                                    <hr class="hr" />
+                                    
+                                    
+                                    <a href="..." class="btn btn-primary">Scheda personaggio</a>
+                                    
+                                </div>
+                                <h1 class="user2">ivan</h1>
+
+                        </div>
+                                <!-- <button type="button" class="btn btn-primary "onclick="handleTrade(this.value)">scambia!</button> -->
+                                <!-- <h1 class="card-title">Card title</h1> -->
+                            
+                    </div>
+                    
+                   
+                    
+                </div>
+            </div>
+         </div>
+    
+    </div>
+
+    
+    
+    
+<script>showInfo(); viewTrades();</script>
+</body>
+
+</html>

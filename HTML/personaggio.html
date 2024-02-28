@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title >personaggio</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="../CSS/style.css">
+  <script src="../JS/nav.js"></script>
+  <script src="../JS/marvel.js"></script>
+
+  <style>
+   
+    </style>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <div>
+    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../HTML/home.html">AFSE</a>
+                        </li>
+                        <li class="nav-item ms-auto">
+                            <a class="nav-link" href="../HTML/crediti.html">Compra</a>
+                        </li>
+                     
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/scambia.html" tabindex="-1" aria-disabled="false">Scambia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/sbusta.html"  tabindex="-1" aria-disabled="true">Sbusta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/album.html"  tabindex="-1" aria-disabled="true">Album</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/cerca.html"  aria-disabled="true">Cerca</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/collezione.html"  tabindex="-1" aria-disabled="true">Collezione</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/marketplace.html"  tabindex="-1" aria-disabled="true">Marketplace</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <div class="bg-light border"></div>
+    
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../HTML/profilo.html" id="profilonav">Profilo</a>
+                        </li>
+                            <div class="bg-light border"></div>
+                                <li class="nav-item ms-auto">
+                                    <a class="nav-link active" aria-current="page" href="../HTML/crediti.html" id="crediti">Crediti</a>
+                                    
+                                </li>
+                        </li>
+                        <div class="bg-light border"></div>
+    
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" id="carte">Carte</a>
+                        </li>
+                        <div class="bg-light border"></div>
+                        <li class="nav-item">
+                            <button class="btn btn-primary mb-2" onclick="logout()">LOGOUT</button>
+                        </li>
+                        <div class="bg-light border"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+        
+    <div id="sfondo">    </div>
+    
+    
+    <!-- inizio profilo -->
+
+        
+
+
+        
+        <div class="container">
+            <div class="d-flex flex-row">
+                    <!-- NOME, FOTO e DESC -->
+
+                    <div id="schedaPersonaggio">
+                        <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded mt-5"  id="characterPic"width="400px" src="...">
+                            <h1 class="font-weight-bold" id="characterName"></h1>
+                            
+                            <h3 class="font-weight-bold  " id="characterDesc"></h3>
+
+
+                        </div>
+                    </div>
+                    <!-- SERIES, EVENTS, COMICS e STORIES -->
+                    <div id="schedaPersonaggio" >
+                        <div id="ok">
+
+                        <!-- COMICS -->
+                        <hr class="hr" />
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h4 id="comics" class="text-center">comics</h4>
+                        </div>
+
+                        <div id="characterComics"  class="d-none">
+                                <a class="characterComicsDetails" onclick="">comics</a>
+                        </div>
+                            
+                            <!-- EVENTS -->
+                            <hr class="hr" />
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 id="events" class="text-center">Events</h4>
+                            </div>
+
+                            <div id="characterEvents"  class="d-none">
+                                <a class="characterEventsDetails"onclick="">EVENTS</a>
+                            </div>
+
+                            <!-- SERIES -->
+                            <hr class="hr" />
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 id="series" class="text-center">Series</h4>
+                            </div>
+
+                            <div id="characterSeries"  class="d-none">
+                                <a class="characterSeriesDetails" onclick="">SERIES</a>
+                            </div>
+
+                            <!-- STORIES -->
+                            <hr class="hr" />
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <h4 id="stories" class="text-center">Stories</h4>
+                            </div>
+
+                            <div id="characterStories"  class="d-none">
+                                <a class="characterStoriesDetails" onclick="">Card title</a>
+                            </div>
+                            <!-- <div class="row mt-2">
+                                <div class="col-md-6"><label class="labels">Name</label><input type="text" class="form-control" placeholder="first name" value=""></div>
+                                <div class="col-md-6"><label class="labels">Surname</label><input type="text" class="form-control" value="" placeholder="surname"></div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-12"><label class="labels">Mobile Number</label><input type="text" class="form-control" placeholder="enter phone number" value=""></div>
+                                <div class="col-md-12"><label class="labels">Address Line 1</label><input type="text" class="form-control" placeholder="enter address line 1" value=""></div>
+                                <div class="col-md-12"><label class="labels">Address Line 2</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                                <div class="col-md-12"><label class="labels">Postcode</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                                <div class="col-md-12"><label class="labels">State</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                                <div class="col-md-12"><label class="labels">Area</label><input type="text" class="form-control" placeholder="enter address line 2" value=""></div>
+                                <div class="col-md-12"><label class="labels">Email ID</label><input type="text" class="form-control" placeholder="enter email id" value=""></div>
+                                <div class="col-md-12"><label class="labels">Education</label><input type="text" class="form-control" placeholder="education" value=""></div>
+                            </div>
+                            <div class="row mt-3">
+                                <div class="col-md-6"><label class="labels">Country</label><input type="text" class="form-control" placeholder="country" value=""></div>
+                                <div class="col-md-6"><label class="labels">State/Region</label><input type="text" class="form-control" value="" placeholder="state"></div>
+                            </div>
+                            <div class="mt-5 text-center"><button class="btn btn-primary profile-button" type="button">Save Profile</button></div> -->
+                        </div>
+                    </div>
+                </div>    
+            </div> 
+        </div>
+        
+        
+        <!-- onCLick SERIES, EVENTS, COMICS e STORIES -->
+        <div class="container">
+
+        
+            <div id="schedaPersonaggioMostra" class="container d-none" >
+                <button onclick="getBack()"> torna indietro</button>
+                <div  id="ok">   
+                <hr class="hr" />
+
+                <div class="d-flex justify-content-center">
+                    <img  id="xPic"  height="600px"   src="...">
+                  </div>
+                <hr class="hr" />
+
+                <h1 class="font-weight-bold" id="xTitle">ok</h1>
+                <hr class="hr" />
+                <h2 class="font-weight-bold" id="xText" style="text-align: center;">ok</h2>
+                
+                <hr class="hr" />
+                
+                <h1>personaggi: </h1>
+                <div id="xCharacter"  class="d-none" style="text-align: center;">
+                    <a class="xCharacterDetails" onclick="">Card title</a>
+                </div>
+                
+                <!-- <h6 class="font-weight-bold" id="xTitle">ok</h6> -->
+            
+                    
+            </div>
+        </div>
+        
+
+    <!-- <script> showInfo();showInfoCharacter()</script> -->
+    
+    
+    <script>
+        function getBack(){
+            document.getElementsByClassName('container')[2].classList.add('d-none');
+            document.getElementsByClassName('container')[0].classList.remove('d-none');
+
+        }
+          function handleX(marvel){
+        if(marvel.characters){
+    
+            marvel.characters.items.map( (e,q)=>{
+                console.log(e)
+                var comics = document.getElementById('xCharacter');
+                 
+                 var clone = comics.cloneNode(true);
+                 clone.id = 'xCharacter-' + q;
+                 console.log(e.title)
+                 console.log(e)
+                 clone.getElementsByClassName("xCharacterDetails")[0].innerHTML=e.name
+                 clone.getElementsByClassName("xCharacterDetails")[0].href=  "../HTML/personaggio.html?id="+ e.resourceURI.split('/').pop()
+                 clone.classList.remove('d-none');
+                 comics.after(clone);
+            })
+            
+            if(marvel.thumbnail){
+                document.getElementById("xPic").src=marvel.thumbnail.path +"."+ marvel.thumbnail.extension;
+
+            }else{
+                document.getElementById("xPic").src="../IMG/no_img.png"
+            }
+            document.getElementById("xTitle").textContent = marvel.title
+        
+            if(marvel.description){
+                document.getElementById("xText").textContent = marvel.description
+            }else{
+                document.getElementById("xText").textContent = "non info avail"
+            }
+
+             
+            }
+
+            document.getElementsByClassName('container')[0].classList.add('d-none');
+            // document.getElementsByClassName('container')[1 ].classList.add('d-none');
+
+
+            document.getElementsByClassName('container')[2].classList.remove('d-none');
+
+        }
+    function getEvents( id){
+        alert( id)
+        getFromMarvel('public/events/'+id).then(res =>{
+            let marvel = res.data.results[0]
+
+            handleX(marvel)
+        } )
+    }function getComics( id){
+        alert( id)
+        getFromMarvel('public/comics/'+id).then(res =>{
+            let marvel = res.data.results[0]
+            handleX(marvel)
+        } )
+    }
+    function getSeries( id){
+        
+        alert( id)
+        getFromMarvel('public/series/'+id).then(res =>{
+            let marvel = res.data.results[0]
+
+            handleX(marvel)
+
+        } )
+    }
+    function getStories(id){
+        alert( id)
+        getFromMarvel('public/stories/'+id).then(res =>{
+            let marvel = res.data.results[0]
+            console.log(marvel)
+            handleX(marvel)
+        } )
+    }
+    var query = window.location.search;
+    const id = new URLSearchParams(query).get('id');
+    if(id){
+
+        //chiamate stories, series, comics e events
+        getFromMarvel('public/characters/'+id+"/stories").then(result => 
+            result.data.results.map( (e,q)=>{
+                console.log("stories")
+                var stories = document.getElementById('characterStories');
+                
+                var clone = stories.cloneNode(true);
+                clone.id = 'stories-' + q;
+                // console.log(e)
+                clone.getElementsByClassName("characterStoriesDetails")[0].innerHTML=e.title
+                // clone.getElementsByClassName("characterStoriesDetails")[0].onClick=  "../HTML/stories.html?storiesID="+ e.resourceURI.split('/').pop()
+                clone.getElementsByClassName( "characterStoriesDetails" )[0].setAttribute( "onClick", "getStories("+e.resourceURI.split('/').pop()+")" );
+
+                // clone.getElementById("characterComicsDetails").innerHTML = "ok"
+                // clone.getElementsByClassName('card-title')[0].innerHTML =   estratto.name
+                // if (estratto.description  && estratto.description.length >70){
+    
+                //     clone.getElementsByClassName('card-text')[0].innerHTML =   estratto.description.substring(0, 70) + " ..."
+                // }else{
+                //     clone.getElementsByClassName('card-text')[0].innerHTML =   estratto.description
+    
+                // }
+                // clone.getElementsByClassName('btn-primary')[0].href = "\personaggio.html" + "?id=" +  estratto.id 
+                
+                // clone.getElementsByClassName('card-text')[1].innerHTML =    " possiedi " + checkDoppione(estratto.id) + " coppia/e"
+                
+                
+                // clone.getElementsByClassName('card-img-top')[0].src =estratto.thumbnail.path +"."+ estratto.thumbnail.extension;
+                clone.classList.remove('d-none');
+
+                stories.after(clone);
+            }))
+        getFromMarvel('public/characters/'+id+"/series").then(result => 
+            result.data.results.map( (e,q)=>{
+                // console.log("series")
+                var series = document.getElementById('characterSeries');
+                     
+                var clone = series.cloneNode(true);
+                clone.id = 'series-' + q;
+                // console.log(e)
+                clone.getElementsByClassName("characterSeriesDetails")[0].innerHTML=e.title
+                // clone.getElementsByClassName("characterSeriesDetails")[0].href=  "../HTML/series.html?seriesID="+ e.resourceURI.split('/').pop()
+                clone.getElementsByClassName( "characterSeriesDetails" )[0].setAttribute( "onClick", "getSeries("+e.resourceURI.split('/').pop()+")" );
+
+                // clone.getElementById("characterComicsDetails").innerHTML = "ok"
+                // clone.getElementsByClassName('card-title')[0].innerHTML =   estratto.name
+                // if (estratto.description  && estratto.description.length >70){
+    
+                //     clone.getElementsByClassName('card-text')[0].innerHTML =   estratto.description.substring(0, 70) + " ..."
+                // }else{
+                //     clone.getElementsByClassName('card-text')[0].innerHTML =   estratto.description
+    
+                // }
+                // clone.getElementsByClassName('btn-primary')[0].href = "\personaggio.html" + "?id=" +  estratto.id 
+                
+                // clone.getElementsByClassName('card-text')[1].innerHTML =    " possiedi " + checkDoppione(estratto.id) + " coppia/e"
+                
+                
+                // clone.getElementsByClassName('card-img-top')[0].src =estratto.thumbnail.path +"."+ estratto.thumbnail.extension;
+                clone.classList.remove('d-none');
+
+                series.after(clone);
+            })    )
+        getFromMarvel('public/characters/'+id+"/comics").then(result => 
+            result.data.results.map( (e,q)=>{
+                // console.log("series")
+                var comics = document.getElementById('characterComics');
+                     
+                var clone = comics.cloneNode(true);
+                clone.id = 'comics-' + q;
+                console.log(e.title)
+                console.log(e)
+                clone.getElementsByClassName("characterComicsDetails")[0].innerHTML=e.title
+                // clone.getElementsByClassName("characterComicsDetails")[0].href=  "../HTML/comics.html?comicsID="+ e.resourceURI.split('/').pop()
+                clone.getElementsByClassName( "characterComicsDetails" )[0].setAttribute( "onClick", "getComics("+e.resourceURI.split('/').pop()+")" );
+
+                // clone.getElementsByClassName('card-title')[0].innerHTML =   estratto.name
+                // if (estratto.description  && estratto.description.length >70){
+    
+                //     clone.getElementsByClassName('card-text')[0].innerHTML =   estratto.description.substring(0, 70) + " ..."
+                // }else{
+                //     clone.getElementsByClassName('card-text')[0].innerHTML =   estratto.description
+    
+                // }
+                // clone.getElementsByClassName('btn-primary')[0].href = "\personaggio.html" + "?id=" +  estratto.id 
+                
+                // clone.getElementsByClassName('card-text')[1].innerHTML =    " possiedi " + checkDoppione(estratto.id) + " coppia/e"
+                
+                
+                // clone.getElementsByClassName('card-img-top')[0].src =estratto.thumbnail.path +"."+ estratto.thumbnail.extension;
+                clone.classList.remove('d-none');
+
+                comics.after(clone);
+            })    )     
+        getFromMarvel('public/characters/'+id+"/events").then(result => 
+            result.data.results.map( (e,q)=>{
+                var events = document.getElementById('characterEvents');   
+                var clone = events.cloneNode(true);
+                clone.id = 'events-' + q;
+                console.log(e.title)
+                console.log(e)
+                clone.getElementsByClassName("characterEventsDetails")[0].innerHTML=e.title
+                clone.getElementsByClassName( "characterEventsDetails" )[0].setAttribute( "onClick", "getEvents("+e.resourceURI.split('/').pop()+")" );
+                clone.classList.remove('d-none');
+
+                events.after(clone);
+            })    )
+
+        //foto 
+        
+        fetch('../JS/eroi.json')
+        .then(response => response.json())
+        .then(data =>{
+         data.findIndex(element=>{
+            if(element.id ==id){
+                            console.log(element.comics.available)
+            document.getElementById('comics').textContent = document.getElementById('comics').textContent +": "+element.comics.available
+            document.getElementById('series').textContent = document.getElementById('series').textContent +": "+element.series.available
+            document.getElementById('stories').textContent = document.getElementById('stories').textContent +": "+element.stories.available
+            document.getElementById('events').textContent = document.getElementById('events').textContent +": "+element.events.available
+            document.querySelector('title').textContent = element.name;
+                console.log(element)
+                let pic = element.thumbnail.path +"."+ element.thumbnail.extension;
+                document.getElementById('characterPic').src =pic
+                document.getElementById('characterName').innerHTML =element.name
+            
+            if(element.description){
+                document.getElementById('characterDesc').innerHTML =element.description
+            }else{
+                document.getElementById('characterDesc').innerHTML ="No info avail"
+
+            }
+
+            
+            
+            } })})
+         
+           
+    }
+
+    
+    </script>
+
+    <script>showInfo()</script>
+</body>
+</html>

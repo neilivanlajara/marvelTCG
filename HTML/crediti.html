@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Crediti</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="../CSS/style.css">
+  <script src="../JS/crediti.js"></script>
+  <script src="../JS/nav.js"></script>
+
+
+</head>
+<body>
+
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <div>
+    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../HTML/home.html">AFSE</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" tabindex="-1" href="../HTML/crediti.html">Compra</a>
+                        </li>
+                     
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/scambia.html" tabindex="-1" aria-disabled="true">Scambia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/sbusta.html"  tabindex="-1" aria-disabled="true">Sbusta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/album.html"  tabindex="-1" aria-disabled="true">Album</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/cerca.html"  aria-disabled="true">Cerca</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/collezione.html"  tabindex="-1" aria-disabled="true">Collezione</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/marketplace.html"  tabindex="-1" aria-disabled="true">Marketplace</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <div class="bg-light border"></div>
+    
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../HTML/profilo.html" id="profilonav">Profilo</a>
+                        </li>
+                            <div class="bg-light border"></div>
+                                <li class="nav-item ms-auto">
+                                    <a class="nav-link active" aria-current="page" href="../HTML/crediti.html" id="crediti">Crediti</a>
+                                    
+                                </li>
+                        </li>
+                        <div class="bg-light border"></div>
+    
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" id="carte">Carte</a>
+                        </li>
+                        <div class="bg-light border"></div>
+                        <li class="nav-item">
+                            <button class="btn btn-primary mb-2" onclick="logout()">LOGOUT</button>
+                        </li>
+                        <div class="bg-light border"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+    
+    <!-- inizio profilo -->
+        
+
+        <!-- Modal -->
+        <div class="modal fade" id="myModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+            
+            <!-- Header del modal -->
+            <div class="modal-header">
+                <h6 class="modal-title">Inserisci i  dati della tua carta di credito! (non quello vero)</h4>
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            
+            <!-- Contenuto del modal -->
+            <div class="modal-body">
+                
+                <form action="crediti.html" onsubmit="cartacredito(event)">
+                    <!-- NOME -->
+                    
+                    <label for="prop">Propietario:</label>
+                    <input id="prop" type="text"  minlength="3" placeholder="Nome e Cognome" required>
+                    
+                    <!-- CC -->
+                    <label for="ccn">Credit Card Number:</label>
+                    <input id="ccn" type="tel" inputmode="numeric" required pattern="[0-9\s]{13,19}" autocomplete="cc-number" maxlength="19" placeholder="xxxx xxxx xxxx xxxx">
+                    <!-- invia -->
+                    <button type="submit">Invia</button>
+                
+                </form>
+            </div>
+            
+            <!-- Footer del modal -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Chiudi</button>
+            </div>
+            
+            </div>
+        </div>
+
+        </div>
+
+
+        <h1>SHOP</h1>
+        <div class="mx-auto">
+                        <div class="d-flex justify-content-center">
+
+
+                                    <div id="schedaCoins">
+                                        
+                                        <div class="container-fluid" id="coins5"  class="coins" >
+                                    
+                                            <img src="../IMG/coin_5.png" width="600" height="600" id="shopimg">
+                                    
+                                            <div id="coinsContainer">
+                                                <h1 id="coinsText">+5 coins</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div id="schedaCoins">
+                                        
+                                        <div class="container-fluid" id="coins10"  class="coins" >
+                                    
+                                            <img src="../IMG/coin_15.png" width="600" height="600" id="shopimg"> 
+                                    
+                                            <div id="coinsContainer">
+                                                <h1 id="coinsText">+10 coins</h1>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    
+                                    <div id="schedaCoins">
+                                        
+                                        <div class="container-fluid" id="coins20"  class="coins" >
+                                    
+                                            <img src="../IMG/coin_20.png" width="600" id="shopimg" height="600">
+                                    
+                                            <div id="coinsContainer">
+                                                <h1 id="coinsText">+2000 coins</h1>
+                                            </div>
+                                        </div>
+
+                                    </div>
+                        </div>
+            </div>
+                    
+          
+
+                
+
+
+<!-- Aggiungi i link ai file JavaScript di jQuery e Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    
+
+    <script> showInfo(); buyCoins();</script>
+</body>
+</html>

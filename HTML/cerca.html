@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title >Cerca</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js" integrity="sha384-cuYeSxntonz0PPNlHhBs68uyIAVpIIOZZ5JqeqvYYIcEL727kskC66kF92t6Xl2V" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+
+  <link rel="stylesheet" href="../CSS/style.css">
+  <script src="../JS/personaggio.js"></script>
+  <script src="../JS/marvel.js"></script>
+  <script src="../JS/nav.js"></script>
+
+
+  <style>
+   
+    </style>
+</head>
+<body>
+    <!-- NAV -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <div>
+    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">AFSE</a>
+                        </li>
+                        <li class="nav-item ms-auto">
+                            <a class="nav-link" href="../HTML/crediti.html">Compra</a>
+                        </li>
+                     
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/scambia.html" tabindex="-1" aria-disabled="false">Scambia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/sbusta.html"  tabindex="-1" aria-disabled="true">Sbusta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/album.html"  tabindex="-1" aria-disabled="true">Album</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/cerca.html"  aria-disabled="true">Cerca</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/collezione.html"  tabindex="-1" aria-disabled="true">Collezione</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/marketplace.html"  tabindex="-1" aria-disabled="true">Marketplace</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <div class="bg-light border"></div>
+    
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../HTML/profilo.html" id="profilonav">Profilo</a>
+                        </li>
+                            <div class="bg-light border"></div>
+                                <li class="nav-item ms-auto">
+                                    <a class="nav-link active" aria-current="page" href="../HTML/crediti.html" id="crediti">Crediti</a>
+                                    
+                                </li>
+                        </li>
+                        <div class="bg-light border"></div>
+    
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" id="carte">Carte</a>
+                        </li>
+                        <div class="bg-light border"></div>
+                        <li class="nav-item">
+                            <button class="btn btn-primary mb-2" onclick="logout()">LOGOUT</button>
+                        </li>
+                        <div class="bg-light border"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+        
+    
+    
+    <!-- inizio profilo -->
+    <div style="position: relative; "><h1 id="numeroRisultati"></h1></div>
+    <div class="container">
+    <div id="sfondo"></div>
+    <input class="form-control mb-4 mt-4" type="text" id="input" placeholder="cerca " aria-label="default input example" onchange="remove();cerca()" >
+    <!-- <button onclick="remove()">cerca</button> -->
+        <!-- <nav aria-label="Page navigation example">
+            
+            <ul class="pagination">
+                <li class="page-item"><a class="page-link" href="#" onclick="getPopular(getPage() - 1);setPage(getPage() - 1)">Previous</a></li>
+                <li class="page-item"><a class="page-link" href="#" id="page-prev" onclick="getPopular(getPage() - 1);setPage(getPage() - 1)">1</a></li>
+            <li class="page-item"><a class="page-link" href="#" id="page-current" onclick="getPopular(getPage())    ;setPage(getPage())">2</a></li>
+            <li class="page-item"><a class="page-link" href="#" id="page-next" onclick="getPopular(getPage() + 1);setPage(getPage() + 1)">3</a></li>
+            <li class="page-item"><a class="page-link" href="#" onclick="getPopular(getPage() + 1);setPage(getPage() + 1)">Next</a></li>
+        </ul>
+        </nav> -->
+        <div class="row" id="film">
+    
+          <div id="card-film" class="col-3 col-sm-4 d-none">
+          
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    <!-- <script> showInfo();showInfoCharacter()</script> -->
+    
+    
+    <script>
+        showInfo();
+        
+        let numeroRisultati = 0 
+    function remove(){
+        var doc = document.getElementById("film");
+        while(doc.hasChildNodes()){
+            
+            doc.removeChild(doc.childNodes[0]);
+        }
+
+    }
+    function cerca(){
+    // getMultiSearch(value)
+    input = document.getElementById("input").value
+    // alert(document.getElementById("input").value)
+    getMultiSearch(input)
+}
+
+    function getMultiSearch(name) {
+        
+        numeroRisultati = 0 
+    if(name.length>3){
+        fetch('../JS/eroi.json')
+        .then(response => response.json())
+    .then(data =>{
+       data.map(e =>{
+
+           if(e.name.toLowerCase().includes(name)){
+           
+                cards(e)
+                console.log(e)
+            } 
+        // console.log(e.name.toLowerCase().includes(name))
+       })
+    }).catch(erro =>{console.log(erro)})
+    
+}else{
+    numeroRisultati = 0
+    document.getElementById("numeroRisultati").textContent =" ci sono  "+  numeroRisultati+ " risultati"
+
+}
+
+    
+}
+    function cards(estratto) {
+        creaCard()
+
+
+
+        var card = document.getElementById('card-film');
+
+                     
+                var clone = card.cloneNode(true);
+                clone.id = 'badge-' + estratto.id;
+
+                clone.getElementsByClassName('card-title')[0].innerHTML =   estratto.name
+                if (estratto.description  && estratto.description.length >70){
+
+                    clone.getElementsByClassName('card-text')[0].innerHTML =   estratto.description.substring(0, 70) + " ..."
+                }else{
+                    clone.getElementsByClassName('card-text')[0].innerHTML =   estratto.description
+
+                }
+                
+                clone.getElementsByClassName('btn btn-primary')[0].href = "\personaggio.html" + "?id=" +  estratto.id 
+                
+                
+                
+                clone.getElementsByClassName('card-img-top')[0].src =estratto.thumbnail.path +"."+ estratto.thumbnail.extension;
+                card.after(clone);
+                clone.classList.remove('d-none');
+                numeroRisultati = numeroRisultati + 1
+                console.log(numeroRisultati)
+                document.getElementById("numeroRisultati").textContent = " ci sono  "+  numeroRisultati+ " risultati"
+    }
+
+    function creaCard(){
+
+                    // Creazione degli elementi HTML
+            const div = document.createElement('div');
+            div.id = 'card-film';
+            div.className = 'col-3 col-sm-4 d-none';
+
+            const innerDiv = document.createElement('div');
+            innerDiv.className = 'card h-100';
+            innerDiv.style.width = '300px';
+
+            const img = document.createElement('img');
+            img.className = 'card-img-top';
+            img.alt = '...';
+            img.width='auto'
+
+            const cardBodyDiv = document.createElement('div');
+            cardBodyDiv.className = 'card-body';
+
+            const cardTitle = document.createElement('h5');
+            cardTitle.className = 'card-title';
+            cardTitle.textContent = 'Card title';
+
+
+            const buttonLink = document.createElement('a');
+            buttonLink.className = 'btn btn-primary';
+            buttonLink.textContent = 'Scheda personaggio';
+
+            const cardText = document.createElement('p');
+            cardText.className = 'card-text';
+            cardText.textContent = "Some quick example text to build on the card title and make up the bulk of the card's content.";
+
+            // Costruzione della struttura gerarchica degli elementi
+            cardBodyDiv.appendChild(cardTitle);
+            cardBodyDiv.appendChild(cardText);
+            cardBodyDiv.appendChild(buttonLink);
+            innerDiv.appendChild(img);
+            innerDiv.appendChild(cardBodyDiv);
+            div.appendChild(innerDiv);
+
+            // Aggiunta dell'elemento al documento HTML
+            const container = document.getElementById('film'); // Sostituisci 'container' con l'id del tuo elemento genitore
+            container.appendChild(div);
+
+    }
+
+    </script>
+</body>
+</html>

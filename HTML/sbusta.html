@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Sbusta</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="../CSS/style.css">
+  <script src="../JS/sbusta.js"></script>
+  <script src="../JS/nav.js"></script>
+
+  
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+    
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+           
+            <div class="collapse navbar-collapse justify-content-between" id="navbarSupportedContent">
+                <div>
+    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#">AFSE</a>
+                        </li>
+                        <li class="nav-item ms-auto">
+                            <a class="nav-link" href="../HTML/crediti.html">Compra</a>
+                        </li>
+                     
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/scambia.html" tabindex="-1" aria-disabled="false">Scambia</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/sbusta.html"  tabindex="-1" aria-disabled="true">Sbusta</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/album.html"  tabindex="-1" aria-disabled="true">Album</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/cerca.html"  aria-disabled="true">Cerca</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/collezione.html"  tabindex="-1" aria-disabled="true">Collezione</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="../HTML/marketplace.html"  tabindex="-1" aria-disabled="true">Marketplace</a>
+                        </li>
+                    </ul>
+                </div>
+                <div>
+    
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <div class="bg-light border"></div>
+    
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../HTML/profilo.html" id="profilonav">Profilo</a>
+                        </li>
+                            <div class="bg-light border"></div>
+                                <li class="nav-item ms-auto">
+                                    <a class="nav-link active" aria-current="page" href="../HTML/crediti.html" id="crediti">Crediti</a>
+                                    
+                                </li>
+                        </li>
+                        <div class="bg-light border"></div>
+    
+                        <li class="nav-item">
+                            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true" id="carte">Carte</a>
+                        </li>
+                        <div class="bg-light border"></div>
+                        <li class="nav-item">
+                            <button class="btn btn-primary mb-2" onclick="logout()">LOGOUT</button>
+                        </li>
+                        <div class="bg-light border"></div>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+        
+    
+    
+  
+        
+        
+        
+        <div id="sbusta" class="container" >
+                           
+        <h1>ACQUISTA FIGURINE</h1>
+        
+
+            <!-- display bustine  -->
+            <div  class="d-flex flex-row justify-content-center ">
+
+                            <div id="schedaCoins">
+                                
+                                <div class="container" id="coins5"  class="coins" >
+                            
+                                    <img src="../IMG/busta5.png" width="600" height="600"  id="shopimg" >
+                            
+                                    <div id="coinsContainer">
+                                        <h1 id="coinsText">+5 carte</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div id="schedaCoins">
+                                
+                                <div class="container" id="coins10"  class="coins" >
+                            
+                                    <img src="../IMG/busta15.png" width="600" height="600"  id="shopimg"  >
+                            
+                                    <div id="coinsContainer">
+                                        <h1 id="coinsText">+10 carte</h1>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            
+                            <div id="schedaCoins">
+                                
+                                <div class="container" id="coins20"  class="coins" >
+                            
+                                    <img src="../IMG/busta50.png"  width="600" height="600"   id="shopimg" >
+                            
+                                    <div id="coinsContainer">
+                                        <h1 id="coinsText">+50 carte</h1>
+                                    </div>
+                                </div>
+
+                            </div>
+                          
+                            
+            </div>
+
+        </div>
+        
+       
+
+        
+        <!-- appare quando sbusto  -->
+        <div  class=" d-none" id="mostra"  >
+    
+            <h1 id="sbustamento">Sbustamento!</h1>
+            <div class=""  >
+                    <div id="loading" style="display: flex; justify-content: center;">
+                        <img src="../IMG/waiting.gif"  width="400px" height="400px"  >
+                    </div>
+                        
+                        <div id="aperturaCarte" style="flex-direction: row; display: flex; ">
+                            
+                            <div id="card-film" class="d-none">
+
+
+                                <div class="card" >
+                                    <img class="card-img-top" src="..." >
+    
+                                    <div class="card-body">
+                                    <h5 class="card-title">Card title</h5>
+                                    <hr class="hr" />
+    
+                                    <p id="desc" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    
+                                    <a href="..." class="btn btn-primary">Scheda personaggio</a>
+                                    <p id="quant" class="card-text">So card's content.</p>
+                                    </div>
+                                </div>
+                              
+                                    
+                              
+                            </div>
+                    </div>         
+            </div>
+            
+        </div>
+        
+
+    <script> showInfo(); buyCards()</script>
+</body>
+</html>
